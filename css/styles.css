@@ -1,0 +1,670 @@
+/* =========================================================
+   Dulce Gisela — estilos
+   Enfoque "mobile-first": los estilos base son para celular,
+   y más abajo (@media) se ajustan para pantallas grandes.
+   ========================================================= */
+
+/* ---------- 1. Paleta y variables ---------- */
+:root {
+  /* Colores de la marca (pastel, tomados del logo) */
+  --crema: #FFFBF8;          /* fondo general */
+  --rosa-50: #FADCE4;        /* rosado muy suave */
+  --rosa-200: #FFB5CC;       /* rosado */
+  --malva: #E2B9DB;          /* malva / lila */
+  --celeste: #9DC3E2;        /* celeste */
+  --turquesa: #9DD2D8;       /* turquesa (macaron) */
+
+  /* Tonos oscuros para texto y botones (para que se lea bien) */
+  --rosa-profundo: #B0557A;  /* botones, detalles */
+  --rosa-oscuro: #8E3F60;    /* botones al pasar el mouse */
+  --chocolate: #3E2A2F;      /* texto principal (como "Gisela" del logo) */
+  --chocolate-suave: #6B5459;
+
+  /* Tipografías */
+  --fuente-logo: "Great Vibes", cursive;
+  --fuente-titulos: "Cormorant Garamond", Georgia, serif;
+  --fuente-texto: "Jost", system-ui, sans-serif;
+
+  /* Medidas */
+  --radio: 6px;
+  --arco: 999px 999px 6px 6px; /* forma de arco para fotos */
+  --ancho-max: 1120px;
+}
+
+/* ---------- 2. Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px; /* para que el menú fijo no tape los títulos */
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  font-weight: 300;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--chocolate);
+  background: var(--crema);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3 {
+  font-family: var(--fuente-titulos);
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+
+h2 {
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+/* Adorno bajo los títulos: línea — ♥ — línea */
+h2::after {
+  content: "";
+  display: block;
+  width: 96px;
+  height: 12px;
+  margin: 14px auto 0;
+  background:
+    linear-gradient(var(--rosa-200), var(--rosa-200)) left center / 38px 1px no-repeat,
+    linear-gradient(var(--rosa-200), var(--rosa-200)) right center / 38px 1px no-repeat,
+    radial-gradient(circle, var(--rosa-profundo) 3px, transparent 3.5px) center / 12px 12px no-repeat;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+a {
+  color: var(--rosa-profundo);
+}
+
+strong {
+  font-weight: 500;
+}
+
+/* Texto pequeño en mayúsculas sobre los títulos */
+.etiqueta {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--rosa-profundo);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.seccion {
+  padding: 72px 0;
+}
+
+.seccion--rosa {
+  background: var(--rosa-50);
+}
+
+.seccion--turquesa {
+  background: linear-gradient(180deg, #E6F4F6 0%, var(--crema) 100%);
+}
+
+.seccion__intro {
+  text-align: center;
+  color: var(--chocolate-suave);
+  max-width: 560px;
+  margin: 0 auto 40px;
+}
+
+/* ---------- 3. Botones ---------- */
+.boton {
+  display: inline-block;
+  padding: 15px 34px;
+  border-radius: 999px;
+  border: 1px solid var(--rosa-profundo);
+  background: var(--rosa-profundo);
+  color: #fff;
+  font-family: var(--fuente-texto);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.boton:hover,
+.boton:focus-visible {
+  background: var(--rosa-oscuro);
+  border-color: var(--rosa-oscuro);
+}
+
+.boton--borde {
+  background: transparent;
+  color: var(--chocolate);
+  border-color: var(--chocolate);
+}
+
+.boton--borde:hover,
+.boton--borde:focus-visible {
+  background: var(--chocolate);
+  border-color: var(--chocolate);
+  color: #fff;
+}
+
+/* ---------- 4. Encabezado y menú ---------- */
+.encabezado {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 251, 248, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rosa-50);
+}
+
+.encabezado__barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  font-family: var(--fuente-logo);
+  font-size: 2rem;
+  color: var(--chocolate);
+  text-decoration: none;
+  line-height: 1;
+}
+
+.menu-boton {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--chocolate);
+  cursor: pointer;
+  padding: 8px;
+}
+
+.menu {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 4px 0 16px;
+}
+
+.menu.abierto {
+  display: block;
+}
+
+.menu a {
+  display: block;
+  padding: 14px 0;
+  color: var(--chocolate);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--rosa-50);
+}
+
+/* ---------- 5. Portada (hero) ---------- */
+.portada {
+  position: relative;
+  overflow: hidden;
+  padding: 56px 0 72px;
+  text-align: center;
+  background: linear-gradient(170deg, var(--crema) 0%, var(--rosa-50) 100%);
+}
+
+/* Círculos decorativos tipo macaron */
+.portada::before,
+.portada::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.portada::before {
+  width: 260px;
+  height: 260px;
+  background: var(--turquesa);
+  top: -120px;
+  right: -100px;
+}
+
+.portada::after {
+  width: 200px;
+  height: 200px;
+  background: var(--malva);
+  bottom: -90px;
+  left: -80px;
+}
+
+.portada__contenido {
+  position: relative; /* para quedar sobre los círculos */
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+
+.portada h1 {
+  font-size: 1rem;
+  margin: 0 0 4px;
+}
+
+.portada h1 .portada__marca-1 {
+  display: block;
+  font-family: var(--fuente-titulos);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--rosa-profundo);
+  margin-bottom: 0.15em;
+}
+
+.portada h1 .portada__marca-2 {
+  display: block;
+  font-family: var(--fuente-logo);
+  font-weight: 400;
+  font-size: 5rem;
+  line-height: 1.15;
+  color: var(--chocolate);
+}
+
+.portada__texto p {
+  max-width: 420px;
+  margin: 16px auto 32px;
+  color: var(--chocolate-suave);
+}
+
+.portada__botones {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Foto en forma de arco (por ahora un degradado) */
+.portada__foto {
+  width: 78%;
+  max-width: 340px;
+  aspect-ratio: 4 / 5;
+  margin: 0 auto;
+  border-radius: var(--arco);
+  object-fit: cover;
+  background: linear-gradient(160deg, var(--rosa-200), var(--malva) 60%, var(--celeste));
+  outline: 1px solid var(--rosa-200);
+  outline-offset: 10px;
+}
+
+/* ---------- 6. Productos ---------- */
+.productos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.producto {
+  text-align: center;
+}
+
+.producto__foto {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  width: 100%;
+  border-radius: var(--arco);
+  margin-bottom: 20px;
+  /* Mientras no haya foto, se ve este fondo */
+  background: linear-gradient(160deg, var(--rosa-50), var(--rosa-200));
+}
+
+.producto:nth-child(3n + 2) .producto__foto {
+  background: linear-gradient(160deg, #E6F4F6, var(--turquesa));
+}
+
+.producto:nth-child(3n + 3) .producto__foto {
+  background: linear-gradient(160deg, #F4E6F1, var(--malva));
+}
+
+.producto h3 {
+  margin-bottom: 6px;
+}
+
+.producto p {
+  margin: 0 0 8px;
+  color: var(--chocolate-suave);
+}
+
+.producto__precio {
+  font-family: var(--fuente-titulos);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--rosa-profundo) !important;
+}
+
+/* ---------- 7. Sobre Gisela ---------- */
+.sobre {
+  display: grid;
+  gap: 48px;
+  align-items: center;
+}
+
+.sobre__foto {
+  border-radius: var(--arco);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  width: 80%;
+  max-width: 380px;
+  margin: 0 auto;
+  background: linear-gradient(160deg, var(--celeste), var(--malva));
+  outline: 1px solid var(--rosa-profundo);
+  outline-offset: 10px;
+}
+
+.sobre__firma {
+  font-family: var(--fuente-logo);
+  font-size: 2.4rem;
+  color: var(--rosa-profundo);
+  margin: 8px 0 0;
+}
+
+/* ---------- 8. Testimonios ---------- */
+.testimonios {
+  display: grid;
+  gap: 24px;
+}
+
+.testimonio {
+  background: var(--crema);
+  border-radius: var(--radio);
+  padding: 36px 28px 28px;
+  margin: 0;
+  text-align: center;
+}
+
+.testimonio::before {
+  content: "“";
+  display: block;
+  font-family: var(--fuente-titulos);
+  font-size: 4rem;
+  line-height: 0.5;
+  color: var(--rosa-200);
+  margin-bottom: 12px;
+}
+
+.testimonio p {
+  margin: 0 0 16px;
+  font-family: var(--fuente-titulos);
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+.testimonio cite {
+  font-style: normal;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rosa-profundo);
+}
+
+/* ---------- 9. Cómo pedir ---------- */
+.pasos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 36px;
+  counter-reset: paso;
+}
+
+.paso {
+  text-align: center;
+  counter-increment: paso;
+}
+
+.paso::before {
+  content: "0" counter(paso);
+  display: block;
+  font-family: var(--fuente-titulos);
+  font-style: italic;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--turquesa);
+  margin-bottom: 8px;
+}
+
+.paso p {
+  margin: 0 auto;
+  max-width: 300px;
+  color: var(--chocolate-suave);
+}
+
+.nota {
+  text-align: center;
+  margin: 40px auto 0;
+  color: var(--chocolate-suave);
+}
+
+/* ---------- 10. Contacto ---------- */
+.contacto {
+  text-align: center;
+}
+
+.contacto__datos {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+}
+
+.contacto__datos li {
+  margin-bottom: 10px;
+}
+
+.contacto__datos span {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--rosa-profundo);
+}
+
+/* ---------- 11. Pie de página ---------- */
+.pie {
+  background: var(--chocolate);
+  color: var(--rosa-50);
+  text-align: center;
+  padding: 40px 0;
+  font-size: 0.85rem;
+}
+
+.pie .logo {
+  color: var(--rosa-50);
+  font-size: 2.2rem;
+}
+
+.pie p {
+  margin: 8px 0 0;
+  opacity: 0.8;
+}
+
+/* ---------- 12. Botón flotante de WhatsApp ---------- */
+.whatsapp-flotante {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #25D366;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  z-index: 20;
+}
+
+.whatsapp-flotante svg {
+  width: 28px;
+  height: 28px;
+  fill: #fff;
+}
+
+/* =========================================================
+   Tablet (desde 640px)
+   ========================================================= */
+@media (min-width: 640px) {
+  .portada__botones {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .productos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pasos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =========================================================
+   Computador (desde 960px)
+   ========================================================= */
+@media (min-width: 960px) {
+  h2 {
+    font-size: 3rem;
+  }
+
+  .seccion {
+    padding: 112px 0;
+  }
+
+  /* El menú se muestra siempre en línea y se oculta el botón ☰ */
+  .menu-boton {
+    display: none;
+  }
+
+  .encabezado .contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .encabezado__barra {
+    height: 80px;
+  }
+
+  .menu {
+    display: flex;
+    gap: 36px;
+    padding: 0;
+  }
+
+  .menu a {
+    border: none;
+    padding: 4px 0;
+    font-size: 0.75rem;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.25s;
+  }
+
+  .menu a:hover {
+    border-bottom-color: var(--rosa-profundo);
+  }
+
+  /* Portada en dos columnas: texto a la izquierda, foto a la derecha */
+  .portada {
+    padding: 96px 0 112px;
+    text-align: left;
+  }
+
+  .portada::before {
+    width: 420px;
+    height: 420px;
+    top: -180px;
+    right: -140px;
+  }
+
+  .portada::after {
+    width: 300px;
+    height: 300px;
+  }
+
+  .portada__contenido {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 64px;
+  }
+
+  .portada h1 .portada__marca-1 {
+    font-size: 2.6rem;
+    margin-bottom: 0.3em;
+  }
+
+  .portada h1 .portada__marca-2 {
+    font-size: 7.5rem;
+  }
+
+  .portada .etiqueta {
+    text-align: left;
+  }
+
+  .portada__texto p {
+    margin-left: 0;
+  }
+
+  .portada__botones {
+    justify-content: flex-start;
+  }
+
+  .portada__foto {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .productos {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+  }
+
+  .sobre {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 80px;
+  }
+
+  .sobre .etiqueta,
+  .sobre h2 {
+    text-align: left;
+  }
+
+  .sobre h2::after {
+    margin-left: 0;
+  }
+
+  .testimonios {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

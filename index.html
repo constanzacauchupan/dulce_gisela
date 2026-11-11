@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO: esto es lo que Google muestra en los resultados.
+       Cambia [ciudad] por la ciudad real. -->
+  <title>Dulce Gisela | Delicias caseras en [ciudad]</title>
+  <meta name="description" content="Tortas, galletas y dulces caseros hechos con amor por Gisela. Pedidos por WhatsApp para cumpleaños, eventos y regalos.">
+  <meta name="theme-color" content="#FADCE4">
+
+  <!-- Vista previa al compartir el link por WhatsApp/Instagram -->
+  <meta property="og:title" content="Dulce Gisela | Delicias caseras">
+  <meta property="og:description" content="Tortas, galletas y dulces caseros hechos con amor. ¡Haz tu pedido!">
+  <meta property="og:type" content="website">
+  <!-- <meta property="og:image" content="img/portada.jpg"> -->
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ========== ENCABEZADO ========== -->
+  <header class="encabezado">
+    <div class="contenedor">
+      <div class="encabezado__barra">
+        <a href="#inicio" class="logo">Dulce Gisela</a>
+        <button class="menu-boton" id="menu-boton" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">☰</button>
+      </div>
+      <nav>
+        <ul class="menu" id="menu">
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#sobre">Sobre Gisela</a></li>
+          <li><a href="#testimonios">Opiniones</a></li>
+          <li><a href="#como-pedir">Cómo pedir</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== PORTADA ========== -->
+    <section class="portada" id="inicio">
+      <div class="contenedor portada__contenido">
+        <div class="portada__texto">
+          <span class="etiqueta">Delicias caseras</span>
+          <h1>
+            <span class="portada__marca-1">Dulce</span>
+            <span class="portada__marca-2">Gisela</span>
+          </h1>
+          <p>Repostería hecha a mano, con ingredientes frescos y mucho cariño, para tus momentos más especiales.</p>
+          <div class="portada__botones">
+            <a class="boton" href="https://wa.me/56986793141?text=Hola%20Gisela%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Haz tu pedido</a>
+            <a class="boton boton--borde" href="#productos">Ver productos</a>
+          </div>
+        </div>
+        <!-- Cambia por: <img class="portada__foto" src="img/portada.webp" alt="Torta decorada de Dulce Gisela"> -->
+        <div class="portada__foto" role="img" aria-label="Foto destacada (pendiente)"></div>
+      </div>
+    </section>
+
+    <!-- ========== PRODUCTOS ========== -->
+    <section class="seccion" id="productos">
+      <div class="contenedor">
+        <span class="etiqueta">Hecho por encargo</span>
+        <h2>Nuestros productos</h2>
+        <p class="seccion__intro">Cada preparación se hace especialmente para ti, con ingredientes frescos y mucho cariño.</p>
+
+        <div class="productos">
+          <!-- Para agregar una foto real, cambia el <div class="producto__foto" ...></div>
+               por: <img class="producto__foto" src="img/torta.webp" alt="Torta de chocolate decorada"> -->
+          <article class="producto">
+            <div class="producto__foto" role="img" aria-label="Foto de torta (pendiente)"></div>
+            <h3>Tortas</h3>
+            <p>Para cumpleaños y celebraciones. Sabores y decoración a elección.</p>
+            <p class="producto__precio">desde $00.000</p>
+          </article>
+
+          <article class="producto">
+            <div class="producto__foto" role="img" aria-label="Foto de macarons (pendiente)"></div>
+            <h3>Macarons</h3>
+            <p>Cajas surtidas de colores y sabores, perfectas para regalar.</p>
+            <p class="producto__precio">desde $00.000</p>
+          </article>
+
+          <article class="producto">
+            <div class="producto__foto" role="img" aria-label="Foto de galletas (pendiente)"></div>
+            <h3>Galletas decoradas</h3>
+            <p>Ideales para regalos, recuerdos y eventos.</p>
+            <p class="producto__precio">desde $00.000</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SOBRE GISELA ========== -->
+    <section class="seccion seccion--turquesa" id="sobre">
+      <div class="contenedor sobre">
+        <!-- Cambia por: <img class="sobre__foto" src="img/gisela.webp" alt="Gisela en su cocina"> -->
+        <div class="sobre__foto" role="img" aria-label="Foto de Gisela (pendiente)"></div>
+        <div>
+          <span class="etiqueta">Nuestra historia</span>
+          <h2>Sobre Gisela</h2>
+          <p>Aquí va la historia de tu mamá: cómo empezó a hacer repostería, qué la inspira y qué hace especiales sus preparaciones.</p>
+          <p>Un párrafo cercano y personal funciona muy bien: a la gente le gusta saber quién está detrás de lo que compra.</p>
+          <p class="sobre__firma">Gisela</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TESTIMONIOS ========== -->
+    <section class="seccion seccion--rosa" id="testimonios">
+      <div class="contenedor">
+        <span class="etiqueta">Opiniones</span>
+        <h2>Lo que dicen nuestras clientas</h2>
+        <div class="testimonios">
+          <blockquote class="testimonio">
+            <p>La torta estaba preciosa y deliciosa. ¡Todos preguntaron dónde la había comprado!</p>
+            <cite>Nombre</cite>
+          </blockquote>
+          <blockquote class="testimonio">
+            <p>Los macarons fueron un éxito en el cumpleaños de mi hija.</p>
+            <cite>Nombre</cite>
+          </blockquote>
+          <blockquote class="testimonio">
+            <p>Súper puntual y atenta. Ya hice mi tercer pedido.</p>
+            <cite>Nombre</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CÓMO PEDIR ========== -->
+    <section class="seccion" id="como-pedir">
+      <div class="contenedor">
+        <span class="etiqueta">Paso a paso</span>
+        <h2>¿Cómo hacer tu pedido?</h2>
+        <ol class="pasos">
+          <li class="paso">
+            <h3>Escríbenos</h3>
+            <p>Cuéntanos por WhatsApp qué quieres, para cuándo y para cuántas personas.</p>
+          </li>
+          <li class="paso">
+            <h3>Confirma</h3>
+            <p>Te enviamos el presupuesto. Se reserva con un abono del 50%.</p>
+          </li>
+          <li class="paso">
+            <h3>Disfruta</h3>
+            <p>Retira tu pedido o lo despachamos a tu domicilio (según zona).</p>
+          </li>
+        </ol>
+        <p class="nota">Pedidos con al menos <strong>3 días</strong> de anticipación.</p>
+      </div>
+    </section>
+
+    <!-- ========== CONTACTO ========== -->
+    <section class="seccion seccion--rosa contacto" id="contacto">
+      <div class="contenedor">
+        <span class="etiqueta">Hablemos</span>
+        <h2>Contacto</h2>
+        <ul class="contacto__datos">
+          <li><span>Ubicación</span>[Ciudad / comuna]</li>
+          <li><span>Horario</span>Lunes a sábado, 10:00 a 19:00</li>
+          <li><span>WhatsApp</span>+56 9 8679 3141</li>
+          <li><span>Instagram</span><a href="https://instagram.com/dulcegisela_" target="_blank" rel="noopener">@dulcegisela_</a></li>
+        </ul>
+        <a class="boton" href="https://wa.me/56986793141?text=Hola%20Gisela%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== PIE ========== -->
+  <footer class="pie">
+    <div class="contenedor">
+      <a href="#inicio" class="logo">Dulce Gisela</a>
+      <p>Delicias caseras · © <span id="anio"></span></p>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp (siempre visible) -->
+  <a class="whatsapp-flotante" href="https://wa.me/56986793141?text=Hola%20Gisela%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.03c0-5.22 4.25-9.47 9.48-9.47 2.53 0 4.91.99 6.7 2.78a9.42 9.42 0 0 1 2.77 6.7c0 5.23-4.25 9.46-9.47 9.46zm8.06-17.53A11.32 11.32 0 0 0 12.04.63C5.76.63.65 5.74.65 12.02c0 2 .52 3.96 1.52 5.69L.55 23.6l6.04-1.58a11.37 11.37 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.18-5.9-3.33-8.05z"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

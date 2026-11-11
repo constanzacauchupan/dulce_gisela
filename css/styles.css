@@ -214,6 +214,10 @@ strong {
   display: block;
 }
 
+.menu a[aria-current="page"] {
+  color: var(--rosa-profundo);
+}
+
 .menu a {
   display: block;
   padding: 14px 0;
@@ -362,6 +366,85 @@ strong {
   font-style: italic;
   font-size: 1.25rem;
   color: var(--rosa-profundo) !important;
+}
+
+.centrado {
+  text-align: center;
+  margin-top: 48px;
+}
+
+/* ---------- 6b. Página de catálogo ---------- */
+.pagina-titulo {
+  padding: 56px 0 8px;
+  text-align: center;
+  background: linear-gradient(180deg, var(--rosa-50) 0%, var(--crema) 100%);
+}
+
+.pagina-titulo h1 {
+  font-size: 3rem;
+}
+
+.pagina-titulo .seccion__intro {
+  margin-bottom: 0;
+}
+
+.seccion--catalogo {
+  padding-top: 40px;
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 48px;
+}
+
+.filtro {
+  font-family: var(--fuente-texto);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--rosa-200);
+  background: transparent;
+  color: var(--chocolate);
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.filtro:hover {
+  background: var(--rosa-50);
+}
+
+.filtro.activo {
+  background: var(--rosa-profundo);
+  border-color: var(--rosa-profundo);
+  color: #fff;
+}
+
+.producto[hidden] {
+  display: none;
+}
+
+.producto__pedir {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rosa-profundo);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rosa-200);
+  padding-bottom: 2px;
+  transition: border-color 0.25s;
+}
+
+.producto__pedir:hover {
+  border-bottom-color: var(--rosa-profundo);
 }
 
 /* ---------- 7. Sobre Gisela ---------- */
@@ -648,6 +731,14 @@ strong {
   .productos {
     grid-template-columns: repeat(3, 1fr);
     gap: 48px;
+  }
+
+  .pagina-titulo {
+    padding-top: 88px;
+  }
+
+  .pagina-titulo h1 {
+    font-size: 4rem;
   }
 
   .sobre {

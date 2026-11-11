@@ -6,6 +6,7 @@ Página web del emprendimiento de repostería Dulce Gisela.
 
 ```
 index.html        → página principal (todas las secciones)
+productos.html    → catálogo completo con filtros por categoría
 css/styles.css    → estilos (paleta de colores al inicio, en :root)
 js/main.js        → menú del celular y año del footer
 img/              → fotos (usar .webp o .jpg, idealmente < 300 KB cada una)
@@ -48,7 +49,8 @@ tonos oscuros (rosa-profundo y chocolate) que combinan y se leen bien.
 - [ ] Reemplazar textos de ejemplo por los reales
 - [ ] Agregar fotos en `img/` y en el catálogo
 - [x] WhatsApp e Instagram (tomados del logo)
-- [ ] Poner la ciudad/comuna (buscar `[ciudad]` y `[Ciudad / comuna]`)
+- [x] Ubicación (Maipú) e historia de Gisela
+- [ ] Reemplazar productos de ejemplo del catálogo (productos.html) y poner precios
 - [ ] Publicar con GitHub Pages
 - [ ] Crear `sitemap.xml` con la URL final y registrar en Google Search Console
 - [ ] Crear Perfil de Empresa en Google

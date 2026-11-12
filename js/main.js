@@ -35,21 +35,43 @@ document.querySelectorAll(".producto[data-nombre]").forEach((producto) => {
   boton.rel = "noopener";
 });
 
-// Filtros por categoría
+// Filtros por categoría + buscador por nombre (funcionan juntos)
 const filtros = document.querySelectorAll(".filtro");
+const buscador = document.getElementById("buscador");
+const sinResultados = document.getElementById("sin-resultados");
+let categoriaActual = "todos";
+
+// Quita tildes y mayúsculas para comparar ("Cuchuflís" = "cuchuflis")
+const normalizar = (texto) =>
+  texto.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+
+function aplicarFiltros() {
+  const busqueda = buscador ? normalizar(buscador.value) : "";
+  let visibles = 0;
+
+  document.querySelectorAll(".producto[data-categoria]").forEach((producto) => {
+    const enCategoria = categoriaActual === "todos" || producto.dataset.categoria === categoriaActual;
+    const coincide = normalizar(producto.dataset.nombre).includes(busqueda);
+    const mostrar = enCategoria && coincide;
+    producto.hidden = !mostrar;
+    if (mostrar) {
+      visibles++;
+      producto.classList.add("visible"); // por si aún no había aparecido con la animación
+    }
+  });
+
+  if (sinResultados) sinResultados.hidden = visibles > 0;
+}
 
 filtros.forEach((filtro) => {
   filtro.addEventListener("click", () => {
-    const categoria = filtro.dataset.filtro;
-
+    categoriaActual = filtro.dataset.filtro;
     filtros.forEach((f) => f.classList.toggle("activo", f === filtro));
-
-    document.querySelectorAll(".producto[data-categoria]").forEach((producto) => {
-      const mostrar = categoria === "todos" || producto.dataset.categoria === categoria;
-      producto.hidden = !mostrar;
-    });
+    aplicarFiltros();
   });
 });
+
+if (buscador) buscador.addEventListener("input", aplicarFiltros);
 
 // ---------- Animación: los elementos aparecen al ir bajando ----------
 const sinMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

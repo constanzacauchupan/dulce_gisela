@@ -22,7 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,600&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/styles.css?v=2">
+  <link rel="stylesheet" href="css/styles.css?v=3">
 </head>
 <body>
 
@@ -61,6 +61,12 @@
 
         <!-- Filtros por categoría.
              El valor de data-filtro debe coincidir con data-categoria de cada producto. -->
+        <!-- Buscador por nombre -->
+        <div class="buscador">
+          <svg class="buscador__icono" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+          <input type="search" id="buscador" class="buscador__campo" placeholder="Buscar producto… ej: torta, alfajores" aria-label="Buscar producto por nombre" autocomplete="off">
+        </div>
+
         <div class="filtros" role="group" aria-label="Filtrar por categoría">
           <button class="filtro activo" data-filtro="todos">Todos</button>
           <button class="filtro" data-filtro="tortas">Tortas</button>
@@ -108,7 +114,7 @@
             <div class="producto__marco"><img class="producto__foto" src="img/torta-oreo.webp" alt="Torta de Oreo con crema y chocolate" loading="lazy"></div>
             <h3>Torta de Oreo</h3>
             <p>Para los fanáticos de las galletas Oreo.</p>
-            <p class="producto__precio">consultar precio</p>
+            <p class="producto__precio">$28.000 · 20 personas</p>
             <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
           </article>
 
@@ -116,7 +122,15 @@
             <div class="producto__marco"><img class="producto__foto" style="object-position: center 62%;" src="img/pie-de-limon.webp" alt="Pie de limón con merengue" loading="lazy"></div>
             <h3>Pie de limón</h3>
             <p>Base crocante, crema de limón y merengue.</p>
-            <p class="producto__precio">consultar precio</p>
+            <p class="producto__precio">$16.000 · 12 personas</p>
+            <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
+          </article>
+
+          <article class="producto" data-categoria="tartas" data-nombre="Kuchen de manzana">
+            <div class="producto__foto" role="img" aria-label="Foto de kuchen de manzana (pendiente)"></div>
+            <h3>Kuchen de manzana</h3>
+            <p>Masa casera con manzanas.</p>
+            <p class="producto__precio">$12.000</p>
             <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
           </article>
 
@@ -124,7 +138,7 @@
             <div class="producto__marco"><img class="producto__foto" style="object-position: center 60%;" src="img/kuchen-de-nuez.webp" alt="Kuchen de nuez cortado" loading="lazy"></div>
             <h3>Kuchen de nuez</h3>
             <p>Masa casera con relleno de nueces.</p>
-            <p class="producto__precio">consultar precio</p>
+            <p class="producto__precio">$16.000 · 12 personas</p>
             <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
           </article>
 
@@ -132,7 +146,7 @@
             <div class="producto__marco"><img class="producto__foto" style="object-position: center 55%;" src="img/tartaleta-de-frutas.webp" alt="Tartaleta con frutas frescas" loading="lazy"></div>
             <h3>Tartaleta de frutas</h3>
             <p>Base crocante con crema y fruta fresca.</p>
-            <p class="producto__precio">consultar precio</p>
+            <p class="producto__precio">$16.000 · 12 personas</p>
             <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
           </article>
 
@@ -140,7 +154,7 @@
             <div class="producto__marco"><img class="producto__foto" src="img/galletas-craqueladas.webp" alt="Galletas craqueladas de chocolate con azúcar flor" loading="lazy"></div>
             <h3>Galletas craqueladas</h3>
             <p>Suaves por dentro, con su típico craquelado de azúcar flor.</p>
-            <p class="producto__precio">consultar precio</p>
+            <p class="producto__precio">$2.500 los 100 g</p>
             <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
           </article>
 
@@ -160,11 +174,11 @@
             <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
           </article>
 
-          <article class="producto" data-categoria="galletas" data-nombre="Galletas de avena">
-            <div class="producto__marco"><img class="producto__foto" style="object-position: center 60%;" src="img/galletas-de-avena.webp" alt="Galletas de avena con chips" loading="lazy"></div>
-            <h3>Galletas de avena</h3>
-            <p>Con chips y nuez.</p>
-            <p class="producto__precio">consultar precio</p>
+          <article class="producto" data-categoria="galletas" data-nombre="Galletas sin azúcar">
+            <div class="producto__foto" role="img" aria-label="Foto de galletas sin azúcar (pendiente)"></div>
+            <h3>Galletas sin azúcar</h3>
+            <p>Galletas caseras, sin azúcar.</p>
+            <p class="producto__precio">$2.500 los 100 g</p>
             <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
           </article>
 
@@ -188,7 +202,7 @@
             <div class="producto__marco"><img class="producto__foto" style="object-position: center 75%;" src="img/cachitos.webp" alt="Cachitos rellenos de manjar con borde de chocolate y coco" loading="lazy"></div>
             <h3>Cachitos</h3>
             <p>Preparación chilena tradicional, rellena y crujiente.</p>
-            <p class="producto__precio">$1.000 c/u</p>
+            <p class="producto__precio">$800 c/u</p>
             <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
           </article>
 
@@ -196,7 +210,7 @@
             <div class="producto__marco"><img class="producto__foto" style="object-position: center 55%;" src="img/empolvados.webp" alt="Empolvados caseros con azúcar flor" loading="lazy"></div>
             <h3>Empolvados</h3>
             <p>Clásico chileno: bizcochos suaves rellenos y espolvoreados con azúcar flor.</p>
-            <p class="producto__precio">$1.000 c/u</p>
+            <p class="producto__precio">$800 c/u</p>
             <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
           </article>
 
@@ -204,7 +218,7 @@
             <div class="producto__marco"><img class="producto__foto" style="object-position: center 60%;" src="img/brazo-de-reina.webp" alt="Brazo de reina relleno, cortado en rodajas" loading="lazy"></div>
             <h3>Brazo de reina</h3>
             <p>Bizcocho enrollado con relleno.</p>
-            <p class="producto__precio">$6.000 entero · $2.000 el trozo</p>
+            <p class="producto__precio">$10.000 entero · $2.000 el trozo</p>
             <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
           </article>
 
@@ -220,7 +234,7 @@
             <div class="producto__foto" role="img" aria-label="Foto de alfajores de maicena (pendiente)"></div>
             <h3>Alfajores de maicena</h3>
             <p>Hechos con maicena, rellenos de manjar y con coco.</p>
-            <p class="producto__precio">consultar precio</p>
+            <p class="producto__precio">$700 c/u · 5 x $3.000</p>
             <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
           </article>
 
@@ -232,7 +246,29 @@
             <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
           </article>
 
+          <article class="producto" data-categoria="tradicionales" data-nombre="Calzones rotos">
+            <div class="producto__foto" role="img" aria-label="Foto de calzones rotos (pendiente)"></div>
+            <h3>Calzones rotos</h3>
+            <p>Clásico chileno: masa frita espolvoreada con azúcar flor.</p>
+            <p class="producto__precio">4 x $1.000</p>
+            <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
+          </article>
+
+          <article class="producto" data-categoria="tradicionales" data-nombre="Trufas">
+            <div class="producto__foto" role="img" aria-label="Foto de trufas (pendiente)"></div>
+            <h3>Trufas</h3>
+            <p>Bocaditos de chocolate, ideales para regalar.</p>
+            <p class="producto__precio">$800 c/u</p>
+            <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
+          </article>
+
         </div>
+
+        <!-- Mensaje cuando la búsqueda no encuentra nada -->
+        <p class="sin-resultados" id="sin-resultados" hidden>
+          No encontramos productos con ese nombre 🧁<br>
+          <a href="https://wa.me/56986793141?text=Hola%20Gisela%2C%20quiero%20consultar%20por%20un%20producto" target="_blank" rel="noopener">Escríbenos</a> y te contamos si lo podemos preparar.
+        </p>
 
         <p class="nota">¿No encuentras lo que buscas? Todo se puede personalizar: <a href="https://wa.me/56986793141?text=Hola%20Gisela%2C%20quiero%20cotizar%20un%20pedido%20personalizado" target="_blank" rel="noopener">escríbenos</a> y lo conversamos.<br>Pedidos con al menos <strong>4 días</strong> de anticipación.</p>
       </div>
@@ -253,6 +289,6 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.03c0-5.22 4.25-9.47 9.48-9.47 2.53 0 4.91.99 6.7 2.78a9.42 9.42 0 0 1 2.77 6.7c0 5.23-4.25 9.46-9.47 9.46zm8.06-17.53A11.32 11.32 0 0 0 12.04.63C5.76.63.65 5.74.65 12.02c0 2 .52 3.96 1.52 5.69L.55 23.6l6.04-1.58a11.37 11.37 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.18-5.9-3.33-8.05z"/></svg>
   </a>
 
-  <script src="js/main.js?v=2"></script>
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>

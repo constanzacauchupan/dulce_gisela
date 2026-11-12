@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Ícono de pestaña: versión simple del logo (sin letras, para que se vea bien en chico) -->
+  <circle cx="32" cy="32" r="31" fill="#E8A0BC"/>
+  <circle cx="32" cy="32" r="24" fill="#FFFBF8"/>
+  <!-- macaron rosado -->
+  <g transform="translate(25,31) rotate(-10)">
+    <rect x="-11" y="3" width="22" height="5" rx="2.5" fill="#FFB5CC"/>
+    <rect x="-11" y="-1" width="22" height="4" rx="2" fill="#7A4A3A"/>
+    <path d="M-11,-1 C-11,-10 11,-10 11,-1 Z" fill="#FFB5CC"/>
+  </g>
+  <!-- macaron turquesa -->
+  <g transform="translate(39,32) rotate(9)">
+    <rect x="-11" y="3" width="22" height="5" rx="2.5" fill="#9DD2D8"/>
+    <rect x="-11" y="-1" width="22" height="4" rx="2" fill="#7A4A3A"/>
+    <path d="M-11,-1 C-11,-10 11,-10 11,-1 Z" fill="#9DD2D8"/>
+  </g>
+  <!-- corazón -->
+  <path d="M32,17 C31,15 27,15 27,18 C27,20 30,22 32,23.5 C34,22 37,20 37,18 C37,15 33,15 32,17 Z" fill="#E0628F"/>
+</svg>

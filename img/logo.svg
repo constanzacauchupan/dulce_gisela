@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Logo Dulce Gisela, delicias caseras">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&amp;family=Cormorant+Garamond:ital,wght@1,600&amp;family=Jost:wght@500&amp;display=swap');
+    .arco-arriba { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; font-size: 30px; letter-spacing: 1.5px; fill: #FFFFFF; }
+    .arco-abajo { font-family: 'Jost', sans-serif; font-weight: 500; font-size: 15px; letter-spacing: 5px; fill: #FFFFFF; }
+    .dulce { font-family: 'Great Vibes', cursive; font-size: 40px; fill: #B0557A; }
+    .gisela { font-family: 'Great Vibes', cursive; font-size: 78px; fill: #3E2A2F; }
+  </style>
+
+  <defs>
+    <!-- Recorridos curvos para los textos del anillo -->
+    <path id="arcoArriba" d="M 38,200 A 162,162 0 0 1 362,200" fill="none"/>
+    <path id="arcoAbajo" d="M 18,200 A 182,182 0 0 0 382,200" fill="none"/>
+
+    <!-- Corazón (centrado en 0,0) -->
+    <path id="corazon" d="M0,-4 C-3,-11 -14,-11 -14,-2 C-14,5 -6,10 0,15 C6,10 14,5 14,-2 C14,-11 3,-11 0,-4 Z"/>
+
+    <!-- Macaron (centrado en 0,0). Colores con variables por grupo -->
+    <g id="macaron">
+      <!-- tapa de abajo -->
+      <rect x="-42" y="13" width="84" height="16" rx="8" style="fill: var(--tapa)"/>
+      <rect x="-45" y="9" width="90" height="7" rx="3.5" style="fill: var(--pie)"/>
+      <!-- relleno -->
+      <rect x="-41" y="-1" width="82" height="12" rx="6" fill="#7A4A3A"/>
+      <!-- tapa de arriba -->
+      <rect x="-45" y="-7" width="90" height="7" rx="3.5" style="fill: var(--pie)"/>
+      <path d="M-43,-5 C-43,-34 43,-34 43,-5 Z" style="fill: var(--tapa)"/>
+      <!-- brillo -->
+      <path d="M-28,-17 C-20,-25 -6,-27 6,-26" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <!-- chispitas -->
+      <g stroke-width="3" stroke-linecap="round">
+        <line x1="-22" y1="-12" x2="-17" y2="-15" stroke="#FFFFFF"/>
+        <line x1="-8" y1="-20" x2="-3" y2="-18" stroke="#F7D46B"/>
+        <line x1="10" y1="-14" x2="14" y2="-18" stroke="#7FB3E0"/>
+        <line x1="22" y1="-20" x2="27" y2="-17" stroke="#FFFFFF"/>
+        <line x1="-30" y1="-8" x2="-27" y2="-4" stroke="#F7D46B"/>
+        <line x1="2" y1="-9" x2="7" y2="-8" stroke="#E0628F"/>
+        <line x1="28" y1="-9" x2="32" y2="-6" stroke="#7FB3E0"/>
+        <line x1="-12" y1="-27" x2="-8" y2="-29" stroke="#FFFFFF"/>
+      </g>
+    </g>
+  </defs>
+
+  <!-- Anillo exterior rosado -->
+  <circle cx="200" cy="200" r="196" fill="#E8A0BC"/>
+  <circle cx="200" cy="200" r="190" fill="none" stroke="#FFFFFF" stroke-opacity="0.6" stroke-width="1.5"/>
+
+  <!-- Círculo interior -->
+  <circle cx="200" cy="200" r="150" fill="#FFFBF8" stroke="#FFFFFF" stroke-width="5"/>
+  <circle cx="200" cy="200" r="139" fill="none" stroke="#FFB5CC" stroke-width="1.5" stroke-dasharray="2 6" stroke-linecap="round"/>
+
+  <!-- Textos del anillo -->
+  <text class="arco-arriba"><textPath href="#arcoArriba" startOffset="50%" text-anchor="middle">Delicias Caseras</textPath></text>
+  <text class="arco-abajo"><textPath href="#arcoAbajo" startOffset="50%" text-anchor="middle">DESDE 2020</textPath></text>
+
+  <!-- Corazoncitos blancos en el anillo, a los lados -->
+  <use href="#corazon" transform="translate(30,212) scale(0.55)" fill="#FFFFFF"/>
+  <use href="#corazon" transform="translate(370,212) scale(0.55)" fill="#FFFFFF"/>
+
+  <!-- Corazón principal -->
+  <use href="#corazon" transform="translate(200,88) scale(1.05)" fill="#E0628F"/>
+  <!-- Rayitas decorativas junto al corazón -->
+  <g stroke="#9DD2D8" stroke-width="3" stroke-linecap="round">
+    <line x1="168" y1="84" x2="176" y2="90"/>
+    <line x1="232" y1="84" x2="224" y2="90"/>
+  </g>
+  <g stroke="#FFB5CC" stroke-width="3" stroke-linecap="round">
+    <line x1="160" y1="100" x2="170" y2="101"/>
+    <line x1="240" y1="100" x2="230" y2="101"/>
+  </g>
+
+  <!-- Macarons -->
+  <g transform="translate(164,150) rotate(-10)" style="--tapa:#FFB5CC; --pie:#F49BB8">
+    <use href="#macaron"/>
+  </g>
+  <g transform="translate(236,152) rotate(9)" style="--tapa:#9DD2D8; --pie:#86C2CA">
+    <use href="#macaron"/>
+  </g>
+
+  <!-- Nombre -->
+  <text class="dulce" x="200" y="226" text-anchor="middle">Dulce</text>
+  <text class="gisela" x="203" y="290" text-anchor="middle">Gisela</text>
+
+  <!-- Corazoncitos inferiores -->
+  <use href="#corazon" transform="translate(200,318) scale(0.75)" fill="#E0628F"/>
+  <g stroke="#FFB5CC" stroke-width="2" stroke-linecap="round">
+    <line x1="140" y1="320" x2="180" y2="320"/>
+    <line x1="220" y1="320" x2="260" y2="320"/>
+  </g>
+  <use href="#corazon" transform="translate(104,262) scale(0.5)" fill="#9DD2D8"/>
+  <use href="#corazon" transform="translate(296,262) scale(0.5)" fill="#E2B9DB"/>
+</svg>

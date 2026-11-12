@@ -19,9 +19,10 @@
   <!-- Tipografías -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,600&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css?v=2">
 </head>
 <body>
 
@@ -61,8 +62,98 @@
             <a class="boton boton--borde" href="#productos">Ver productos</a>
           </div>
         </div>
-        <!-- Cambia por: <img class="portada__foto" src="img/portada.webp" alt="Torta decorada de Dulce Gisela"> -->
-        <div class="portada__foto" role="img" aria-label="Foto destacada (pendiente)"></div>
+        <!-- Logo de Dulce Gisela (copia de img/logo.svg dentro de la página para que use las mismas letras) -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" class="portada__logo" role="img" aria-label="Logo Dulce Gisela, delicias caseras">
+          <style>
+            .arco-arriba { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; font-size: 30px; letter-spacing: 1.5px; fill: #FFFFFF; }
+            .arco-abajo { font-family: 'Jost', sans-serif; font-weight: 500; font-size: 15px; letter-spacing: 5px; fill: #FFFFFF; }
+            .dulce { font-family: 'Great Vibes', cursive; font-size: 40px; fill: #B0557A; }
+            .gisela { font-family: 'Great Vibes', cursive; font-size: 78px; fill: #3E2A2F; }
+          </style>
+
+          <defs>
+            <!-- Recorridos curvos para los textos del anillo -->
+            <path id="arcoArriba" d="M 38,200 A 162,162 0 0 1 362,200" fill="none"/>
+            <path id="arcoAbajo" d="M 18,200 A 182,182 0 0 0 382,200" fill="none"/>
+
+            <!-- Corazón (centrado en 0,0) -->
+            <path id="corazon" d="M0,-4 C-3,-11 -14,-11 -14,-2 C-14,5 -6,10 0,15 C6,10 14,5 14,-2 C14,-11 3,-11 0,-4 Z"/>
+
+            <!-- Macaron (centrado en 0,0). Colores con variables por grupo -->
+            <g id="macaron">
+              <!-- tapa de abajo -->
+              <rect x="-42" y="13" width="84" height="16" rx="8" style="fill: var(--tapa)"/>
+              <rect x="-45" y="9" width="90" height="7" rx="3.5" style="fill: var(--pie)"/>
+              <!-- relleno -->
+              <rect x="-41" y="-1" width="82" height="12" rx="6" fill="#7A4A3A"/>
+              <!-- tapa de arriba -->
+              <rect x="-45" y="-7" width="90" height="7" rx="3.5" style="fill: var(--pie)"/>
+              <path d="M-43,-5 C-43,-34 43,-34 43,-5 Z" style="fill: var(--tapa)"/>
+              <!-- brillo -->
+              <path d="M-28,-17 C-20,-25 -6,-27 6,-26" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="4" stroke-linecap="round" fill="none"/>
+              <!-- chispitas -->
+              <g stroke-width="3" stroke-linecap="round">
+                <line x1="-22" y1="-12" x2="-17" y2="-15" stroke="#FFFFFF"/>
+                <line x1="-8" y1="-20" x2="-3" y2="-18" stroke="#F7D46B"/>
+                <line x1="10" y1="-14" x2="14" y2="-18" stroke="#7FB3E0"/>
+                <line x1="22" y1="-20" x2="27" y2="-17" stroke="#FFFFFF"/>
+                <line x1="-30" y1="-8" x2="-27" y2="-4" stroke="#F7D46B"/>
+                <line x1="2" y1="-9" x2="7" y2="-8" stroke="#E0628F"/>
+                <line x1="28" y1="-9" x2="32" y2="-6" stroke="#7FB3E0"/>
+                <line x1="-12" y1="-27" x2="-8" y2="-29" stroke="#FFFFFF"/>
+              </g>
+            </g>
+          </defs>
+
+          <!-- Anillo exterior rosado -->
+          <circle cx="200" cy="200" r="196" fill="#E8A0BC"/>
+          <circle cx="200" cy="200" r="190" fill="none" stroke="#FFFFFF" stroke-opacity="0.6" stroke-width="1.5"/>
+
+          <!-- Círculo interior -->
+          <circle cx="200" cy="200" r="150" fill="#FFFBF8" stroke="#FFFFFF" stroke-width="5"/>
+          <circle cx="200" cy="200" r="139" fill="none" stroke="#FFB5CC" stroke-width="1.5" stroke-dasharray="2 6" stroke-linecap="round"/>
+
+          <!-- Textos del anillo -->
+          <text class="arco-arriba"><textPath href="#arcoArriba" startOffset="50%" text-anchor="middle">Delicias Caseras</textPath></text>
+          <text class="arco-abajo"><textPath href="#arcoAbajo" startOffset="50%" text-anchor="middle">DESDE 2020</textPath></text>
+
+          <!-- Corazoncitos blancos en el anillo, a los lados -->
+          <use href="#corazon" transform="translate(30,212) scale(0.55)" fill="#FFFFFF"/>
+          <use href="#corazon" transform="translate(370,212) scale(0.55)" fill="#FFFFFF"/>
+
+          <!-- Corazón principal -->
+          <use href="#corazon" transform="translate(200,88) scale(1.05)" fill="#E0628F"/>
+          <!-- Rayitas decorativas junto al corazón -->
+          <g stroke="#9DD2D8" stroke-width="3" stroke-linecap="round">
+            <line x1="168" y1="84" x2="176" y2="90"/>
+            <line x1="232" y1="84" x2="224" y2="90"/>
+          </g>
+          <g stroke="#FFB5CC" stroke-width="3" stroke-linecap="round">
+            <line x1="160" y1="100" x2="170" y2="101"/>
+            <line x1="240" y1="100" x2="230" y2="101"/>
+          </g>
+
+          <!-- Macarons -->
+          <g transform="translate(164,150) rotate(-10)" style="--tapa:#FFB5CC; --pie:#F49BB8">
+            <use href="#macaron"/>
+          </g>
+          <g transform="translate(236,152) rotate(9)" style="--tapa:#9DD2D8; --pie:#86C2CA">
+            <use href="#macaron"/>
+          </g>
+
+          <!-- Nombre -->
+          <text class="dulce" x="200" y="226" text-anchor="middle">Dulce</text>
+          <text class="gisela" x="203" y="290" text-anchor="middle">Gisela</text>
+
+          <!-- Corazoncitos inferiores -->
+          <use href="#corazon" transform="translate(200,318) scale(0.75)" fill="#E0628F"/>
+          <g stroke="#FFB5CC" stroke-width="2" stroke-linecap="round">
+            <line x1="140" y1="320" x2="180" y2="320"/>
+            <line x1="220" y1="320" x2="260" y2="320"/>
+          </g>
+          <use href="#corazon" transform="translate(104,262) scale(0.5)" fill="#9DD2D8"/>
+          <use href="#corazon" transform="translate(296,262) scale(0.5)" fill="#E2B9DB"/>
+        </svg>
       </div>
     </section>
 
@@ -189,6 +280,6 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.03c0-5.22 4.25-9.47 9.48-9.47 2.53 0 4.91.99 6.7 2.78a9.42 9.42 0 0 1 2.77 6.7c0 5.23-4.25 9.46-9.47 9.46zm8.06-17.53A11.32 11.32 0 0 0 12.04.63C5.76.63.65 5.74.65 12.02c0 2 .52 3.96 1.52 5.69L.55 23.6l6.04-1.58a11.37 11.37 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.18-5.9-3.33-8.05z"/></svg>
   </a>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2"></script>
 </body>
 </html>

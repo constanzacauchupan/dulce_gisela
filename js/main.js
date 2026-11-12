@@ -50,3 +50,53 @@ filtros.forEach((filtro) => {
     });
   });
 });
+
+// ---------- Animación: los elementos aparecen al ir bajando ----------
+const sinMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (!sinMovimiento && "IntersectionObserver" in window) {
+  // Elementos que aparecen (la portada tiene su propia animación)
+  const selector = [
+    ".seccion .etiqueta",
+    ".seccion h2",
+    ".seccion__intro",
+    ".producto",
+    ".centrado",
+    ".sobre__foto",
+    ".sobre p",
+    ".testimonio",
+    ".paso",
+    ".nota",
+    ".contacto__datos li",
+    ".contacto .boton",
+    ".filtros",
+    ".pagina-titulo h1",
+    ".pagina-titulo .etiqueta",
+  ].join(", ");
+
+  const elementos = [...document.querySelectorAll(selector)].filter(
+    (el) => !el.closest(".portada")
+  );
+
+  // En grupos (productos, opiniones, pasos), cada uno aparece un poquito después del anterior
+  elementos.forEach((el) => {
+    const hermanos = [...el.parentElement.children].filter((h) => h.matches(selector));
+    const posicion = hermanos.indexOf(el);
+    if (posicion > 0) el.style.setProperty("--retraso", `${(posicion % 3) * 0.12}s`);
+    el.classList.add("revelar");
+  });
+
+  const observador = new IntersectionObserver(
+    (entradas) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add("visible");
+          observador.unobserve(entrada.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+  );
+
+  elementos.forEach((el) => observador.observe(el));
+}

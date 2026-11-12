@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://constanzacauchupan.github.io/dulce_gisela/sitemap.xml
+Sitemap: https://dulcegisela.cl/sitemap.xml

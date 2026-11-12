@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Catálogo | Dulce Gisela, repostería casera en Maipú</title>
-  <meta name="description" content="Catálogo de Dulce Gisela: tortas, macarons, galletas y más. Repostería casera y personalizada en Maipú. Pide por WhatsApp.">
+  <meta name="description" content="Catálogo de Dulce Gisela: tortas, kuchenes, galletas, cachitos, empolvados, alfajores y más. Repostería casera y personalizada en Maipú. Pide por WhatsApp.">
   <meta name="theme-color" content="#FADCE4">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,67 +54,163 @@
         <div class="filtros" role="group" aria-label="Filtrar por categoría">
           <button class="filtro activo" data-filtro="todos">Todos</button>
           <button class="filtro" data-filtro="tortas">Tortas</button>
-          <button class="filtro" data-filtro="macarons">Macarons</button>
+          <button class="filtro" data-filtro="tartas">Tartas y kuchenes</button>
           <button class="filtro" data-filtro="galletas">Galletas</button>
-          <button class="filtro" data-filtro="otros">Otros</button>
+          <button class="filtro" data-filtro="tradicionales">Tradicionales</button>
         </div>
 
         <!--
           ===== CÓMO AGREGAR UN PRODUCTO =====
           Copia un <article> completo y cambia:
-            - data-categoria: tortas / macarons / galletas / otros
+            - data-categoria: tortas / tartas / galletas / tradicionales
             - data-nombre: el nombre (se usa en el mensaje de WhatsApp)
-            - la foto: <img class="producto__foto" src="img/NOMBRE.webp" alt="descripción">
-            - nombre, descripción y precio
-          Los productos de abajo son EJEMPLOS: reemplázalos por los reales.
+            - la foto: <div class="producto__marco"><img class="producto__foto producto__foto--contener" src="img/NOMBRE.webp" alt="descripción" loading="lazy"></div>
+              (producto__foto--contener muestra la foto completa; quítalo si la foto debe llenar todo el arco)
+            - nombre, descripción y precio (cambia "consultar precio" por ej. "desde $15.000")
         -->
         <div class="productos productos--catalogo">
 
-          <article class="producto" data-categoria="tortas" data-nombre="Torta de chocolate">
-            <div class="producto__foto" role="img" aria-label="Foto de torta de chocolate (pendiente)"></div>
-            <h3>Torta de chocolate</h3>
-            <p>Bizcocho húmedo de chocolate con relleno a elección.</p>
-            <p class="producto__precio">desde $00.000</p>
+          <article class="producto" data-categoria="tortas" data-nombre="Torta amor">
+            <div class="producto__foto" role="img" aria-label="Foto de torta amor (pendiente)"></div>
+            <h3>Torta amor</h3>
+            <p>Capas de masa crujiente intercaladas con manjar. Un clásico chileno.</p>
+            <p class="producto__precio">consultar precio</p>
             <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
           </article>
 
-          <article class="producto" data-categoria="tortas" data-nombre="Torta personalizada">
-            <div class="producto__foto" role="img" aria-label="Foto de torta personalizada (pendiente)"></div>
-            <h3>Torta personalizada</h3>
-            <p>Diseñada a tu gusto para cumpleaños, bautizos y celebraciones.</p>
-            <p class="producto__precio">desde $00.000</p>
+          <article class="producto" data-categoria="tortas" data-nombre="Torta manjar durazno">
+            <div class="producto__foto" role="img" aria-label="Foto de torta manjar durazno (pendiente)"></div>
+            <h3>Torta manjar durazno</h3>
+            <p>Bizcocho suave con manjar y duraznos.</p>
+            <p class="producto__precio">consultar precio</p>
             <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
           </article>
 
-          <article class="producto" data-categoria="macarons" data-nombre="Caja de macarons">
-            <div class="producto__foto" role="img" aria-label="Foto de caja de macarons (pendiente)"></div>
-            <h3>Caja de macarons</h3>
-            <p>Surtido de colores y sabores. Cajas de 6, 12 o 24 unidades.</p>
-            <p class="producto__precio">desde $00.000</p>
+          <article class="producto" data-categoria="tortas" data-nombre="Torta de piña">
+            <div class="producto__marco"><img class="producto__foto" src="img/torta-de-pina.webp" alt="Torta de piña con crema y trozos de piña" loading="lazy"></div>
+            <h3>Torta de piña</h3>
+            <p>Bizcocho húmedo con crema y piña.</p>
+            <p class="producto__precio">consultar precio</p>
             <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
           </article>
 
-          <article class="producto" data-categoria="galletas" data-nombre="Galletas decoradas">
-            <div class="producto__foto" role="img" aria-label="Foto de galletas decoradas (pendiente)"></div>
-            <h3>Galletas decoradas</h3>
-            <p>Personalizadas con nombres, temáticas o colores de tu evento.</p>
-            <p class="producto__precio">desde $00.000</p>
+          <article class="producto" data-categoria="tortas" data-nombre="Torta de Oreo">
+            <div class="producto__marco"><img class="producto__foto" src="img/torta-oreo.webp" alt="Torta de Oreo con crema y chocolate" loading="lazy"></div>
+            <h3>Torta de Oreo</h3>
+            <p>Para los fanáticos de las galletas Oreo.</p>
+            <p class="producto__precio">consultar precio</p>
             <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
           </article>
 
-          <article class="producto" data-categoria="otros" data-nombre="Cupcakes">
-            <div class="producto__foto" role="img" aria-label="Foto de cupcakes (pendiente)"></div>
-            <h3>Cupcakes</h3>
-            <p>Decorados a tu gusto, ideales para compartir.</p>
-            <p class="producto__precio">desde $00.000</p>
+          <article class="producto" data-categoria="tartas" data-nombre="Pie de limón">
+            <div class="producto__marco"><img class="producto__foto" style="object-position: center 62%;" src="img/pie-de-limon.webp" alt="Pie de limón con merengue" loading="lazy"></div>
+            <h3>Pie de limón</h3>
+            <p>Base crocante, crema de limón y merengue.</p>
+            <p class="producto__precio">consultar precio</p>
             <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
           </article>
 
-          <article class="producto" data-categoria="otros" data-nombre="Mesa dulce">
-            <div class="producto__foto" role="img" aria-label="Foto de mesa dulce (pendiente)"></div>
-            <h3>Mesa dulce</h3>
-            <p>Combinación de productos para tu evento. Cotiza según cantidad de invitados.</p>
-            <p class="producto__precio">a cotizar</p>
+          <article class="producto" data-categoria="tartas" data-nombre="Kuchen de manzana">
+            <div class="producto__foto" role="img" aria-label="Foto de kuchen de manzana (pendiente)"></div>
+            <h3>Kuchen de manzana</h3>
+            <p>Masa casera con manzanas frescas.</p>
+            <p class="producto__precio">consultar precio</p>
+            <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
+          </article>
+
+          <article class="producto" data-categoria="tartas" data-nombre="Kuchen de nuez">
+            <div class="producto__marco"><img class="producto__foto" style="object-position: center 60%;" src="img/kuchen-de-nuez.webp" alt="Kuchen de nuez cortado" loading="lazy"></div>
+            <h3>Kuchen de nuez</h3>
+            <p>Masa casera con relleno de nueces.</p>
+            <p class="producto__precio">consultar precio</p>
+            <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
+          </article>
+
+          <article class="producto" data-categoria="tartas" data-nombre="Tartaleta de frutas">
+            <div class="producto__marco"><img class="producto__foto" style="object-position: center 55%;" src="img/tartaleta-de-frutas.webp" alt="Tartaleta con frutas frescas" loading="lazy"></div>
+            <h3>Tartaleta de frutas</h3>
+            <p>Base crocante con crema y fruta fresca.</p>
+            <p class="producto__precio">consultar precio</p>
+            <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
+          </article>
+
+          <article class="producto" data-categoria="galletas" data-nombre="Galletas craqueladas">
+            <div class="producto__marco"><img class="producto__foto" src="img/galletas-craqueladas.webp" alt="Galletas craqueladas de chocolate con azúcar flor" loading="lazy"></div>
+            <h3>Galletas craqueladas</h3>
+            <p>Suaves por dentro, con su típico craquelado de azúcar flor.</p>
+            <p class="producto__precio">consultar precio</p>
+            <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
+          </article>
+
+          <article class="producto" data-categoria="galletas" data-nombre="Galletas cookie">
+            <div class="producto__marco"><img class="producto__foto" src="img/galletas-cookie.webp" alt="Galletas cookie con chips de chocolate" loading="lazy"></div>
+            <h3>Galletas cookie</h3>
+            <p>Galletas estilo americano con chips.</p>
+            <p class="producto__precio">consultar precio</p>
+            <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
+          </article>
+
+          <article class="producto" data-categoria="galletas" data-nombre="Galletas bañadas en chocolate">
+            <div class="producto__foto" role="img" aria-label="Foto de galletas bañadas en chocolate (pendiente)"></div>
+            <h3>Galletas bañadas en chocolate</h3>
+            <p>Galletas caseras cubiertas de chocolate.</p>
+            <p class="producto__precio">consultar precio</p>
+            <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
+          </article>
+
+          <article class="producto" data-categoria="galletas" data-nombre="Galletas de avena">
+            <div class="producto__marco"><img class="producto__foto" style="object-position: center 60%;" src="img/galletas-de-avena.webp" alt="Galletas de avena con chips" loading="lazy"></div>
+            <h3>Galletas de avena</h3>
+            <p>Con chips y nuez.</p>
+            <p class="producto__precio">consultar precio</p>
+            <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
+          </article>
+
+          <article class="producto" data-categoria="tradicionales" data-nombre="Rollitos de canela">
+            <div class="producto__marco"><img class="producto__foto" style="object-position: center 65%;" src="img/rollitos-de-canela.webp" alt="Rollitos de canela con glaseado" loading="lazy"></div>
+            <h3>Rollitos de canela</h3>
+            <p>Masa suave con canela y toppings variados.</p>
+            <p class="producto__precio">consultar precio</p>
+            <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
+          </article>
+
+          <article class="producto" data-categoria="tradicionales" data-nombre="Cachitos">
+            <div class="producto__marco"><img class="producto__foto" style="object-position: center 55%;" src="img/cachitos.webp" alt="Cachitos rellenos con azúcar flor" loading="lazy"></div>
+            <h3>Cachitos</h3>
+            <p>Preparación chilena tradicional, rellena y crujiente.</p>
+            <p class="producto__precio">consultar precio</p>
+            <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
+          </article>
+
+          <article class="producto" data-categoria="tradicionales" data-nombre="Empolvados">
+            <div class="producto__marco"><img class="producto__foto" style="object-position: center 70%;" src="img/empolvados.webp" alt="Empolvados rellenos de manjar" loading="lazy"></div>
+            <h3>Empolvados</h3>
+            <p>Clásico chileno: bizcochos suaves rellenos y espolvoreados con azúcar flor.</p>
+            <p class="producto__precio">consultar precio</p>
+            <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
+          </article>
+
+          <article class="producto" data-categoria="tradicionales" data-nombre="Brazo de reina">
+            <div class="producto__marco"><img class="producto__foto" style="object-position: center 60%;" src="img/brazo-de-reina.webp" alt="Brazo de reina relleno, cortado en rodajas" loading="lazy"></div>
+            <h3>Brazo de reina</h3>
+            <p>Bizcocho enrollado con relleno.</p>
+            <p class="producto__precio">consultar precio</p>
+            <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
+          </article>
+
+          <article class="producto" data-categoria="tradicionales" data-nombre="Alfajores">
+            <div class="producto__marco"><img class="producto__foto" style="object-position: 40% center;" src="img/alfajores.webp" alt="Alfajores bañados en chocolate, uno partido por la mitad" loading="lazy"></div>
+            <h3>Alfajores</h3>
+            <p>Rellenos de manjar y bañados en chocolate.</p>
+            <p class="producto__precio">consultar precio</p>
+            <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
+          </article>
+
+          <article class="producto" data-categoria="tradicionales" data-nombre="Cuchuflís">
+            <div class="producto__marco"><img class="producto__foto producto__foto--contener" src="img/cuchuflis.webp" alt="Cuchuflís bañados en chocolate" loading="lazy"></div>
+            <h3>Cuchuflís</h3>
+            <p>Barquillos crujientes rellenos de manjar.</p>
+            <p class="producto__precio">consultar precio</p>
             <a class="producto__pedir" href="#">Pedir por WhatsApp</a>
           </article>
 

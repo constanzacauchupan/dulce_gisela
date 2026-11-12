@@ -344,12 +344,51 @@ strong {
   background: linear-gradient(160deg, var(--rosa-50), var(--rosa-200));
 }
 
-.producto:nth-child(3n + 2) .producto__foto {
+/* Colores alternados mientras no haya foto */
+.producto:nth-child(3n + 2) div.producto__foto {
   background: linear-gradient(160deg, #E6F4F6, var(--turquesa));
 }
 
-.producto:nth-child(3n + 3) .producto__foto {
+.producto:nth-child(3n + 3) div.producto__foto {
   background: linear-gradient(160deg, #F4E6F1, var(--malva));
+}
+
+/* Marco de las fotos: fondo tipo estudio fotográfico, copiado de la foto
+   de las galletas craqueladas: blanco arriba y una "mesa" gris desde la mitad.
+   Las partes blancas de cada foto se funden con este fondo (mix-blend-mode). */
+.producto__marco {
+  border-radius: var(--arco);
+  overflow: hidden;
+  margin-bottom: 20px;
+  isolation: isolate;
+  background:
+    /* sombra suave hacia la izquierda, como en la foto original */
+    linear-gradient(90deg, rgba(120, 112, 118, 0.18) 0%, rgba(120, 112, 118, 0) 55%) bottom / 100% 50% no-repeat,
+    /* pared blanca arriba y mesa gris abajo */
+    linear-gradient(180deg,
+      #FFFFFF 0%,
+      #FFFFFF 38%,
+      #F6F5F7 50%,
+      #E8E6EA 62%,
+      #DCD9DE 76%,
+      #D8D5DA 86%,
+      #E4E2E5 100%);
+}
+
+.producto__marco .producto__foto {
+  display: block;
+  margin: 0;
+  border-radius: 0;
+  background: none;
+}
+
+/* Fotos con fondo blanco o transparente: el producto se muestra completo,
+   grande y "apoyado" sobre la mesa; su fondo blanco se mezcla con el del marco */
+.producto__foto--contener {
+  object-fit: contain;
+  object-position: center 85%;
+  padding: 8% 4% 8%;
+  mix-blend-mode: multiply;
 }
 
 .producto h3 {
@@ -503,6 +542,10 @@ strong {
   font-style: italic;
   font-size: 1.3rem;
   line-height: 1.5;
+}
+
+.testimonio p:last-child {
+  margin-bottom: 0;
 }
 
 .testimonio cite {

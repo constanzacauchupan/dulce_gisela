@@ -29,7 +29,7 @@ document.getElementById("anio").textContent = new Date().getFullYear();
 document.querySelectorAll(".producto[data-nombre]").forEach((producto) => {
   const boton = producto.querySelector(".producto__pedir");
   if (!boton) return;
-  const mensaje = `Hola Gisela, me interesa: ${producto.dataset.nombre}`;
+  const mensaje = `¡Hola Gisela! 👋 Me gustaría cotizar: ${producto.dataset.nombre} 🧁`;
   boton.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
   boton.target = "_blank";
   boton.rel = "noopener";
